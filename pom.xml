@@ -8,7 +8,7 @@
 
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>POJOs representing a Hearthstone game entity and game constants</description>
-	<url>https://github.com/Zero-to-Heroes/hs-game-entities.git</url>
+	<url>https://github.com/Zero-to-Heroes/hs-game-entities</url>
 
 	<licenses>
 		<license>
