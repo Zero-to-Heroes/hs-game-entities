@@ -1,14 +1,15 @@
 <!-- http://central.sonatype.org/pages/apache-maven.html -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.zerotoheroes</groupId>
 	<artifactId>hs-game-entities</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>POJOs representing a Hearthstone game entity and game constants</description>
-	<url>https://github.com/Zero-to-Heroes</url>
+	<url>https://github.com/Zero-to-Heroes/hs-game-entities.git</url>
 
 	<licenses>
 		<license>
@@ -30,8 +31,8 @@
 		<connection>scm:git:git://github.com/Zero-to-Heroes/hs-game-entities.git</connection>
 		<developerConnection>scm:git:ssh://github.com:Zero-to-Heroes/hs-game-entities.git</developerConnection>
 		<url>http://github.com/Zero-to-Heroes/hs-game-entities/tree/master</url>
-	  <tag>hs-game-entities-1.0.0</tag>
-  </scm>
+		<tag>hs-game-entities-1.0.0</tag>
+	</scm>
 
 	<distributionManagement>
 		<snapshotRepository>
@@ -114,10 +115,7 @@
 		</dependency>
 	</dependencies>
 
-	<!--
-		mvn release:clean release:prepare
-		mvn release:perform
-	 -->
+	<!-- mvn release:clean release:prepare mvn release:perform -->
 	<build>
 		<plugins>
 			<plugin>
