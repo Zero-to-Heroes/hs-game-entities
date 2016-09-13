@@ -38,8 +38,8 @@ public class Action extends GameAction {
 	@XmlAttribute(name = "index")
 	private int index = -1;
 
-//	@XmlAttribute(name = "effectId")
-//	private int effectId = -1;
+	// @XmlAttribute(name = "effectId")
+	// private int effectId = -1;
 
 	@XmlAttribute(name = "effectIndex")
 	private int effectIndex = -1;
@@ -52,7 +52,7 @@ public class Action extends GameAction {
 
 	//@formatter:off
 	@XmlElements({
-			@XmlElement(name = "Action", type = Action.class),
+			@XmlElement(name = "Block", type = Action.class),
 			@XmlElement(name = "Choices", type = Choices.class),
 			@XmlElement(name = "FullEntity", type = FullEntity.class),
 			@XmlElement(name = "GameEntity", type = GameEntity.class),
@@ -70,8 +70,7 @@ public class Action extends GameAction {
 	private List<GameData> data = new ArrayList<>();
 
 	@Builder
-	public Action(int index, int target, int type, List<GameData> data, int entity, int effectIndex, 
-			String timestamp) {
+	public Action(int index, int target, int type, List<GameData> data, int entity, int effectIndex, String timestamp) {
 		super();
 		this.index = index;
 		this.target = target;
