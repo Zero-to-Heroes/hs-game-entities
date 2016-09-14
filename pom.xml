@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.zerotoheroes</groupId>
 	<artifactId>hs-game-entities</artifactId>
-	<version>1.0.2-SNAPSHOT</version>
+	<version>1.0.2</version>
 	<packaging>jar</packaging>
 
 	<name>${project.groupId}:${project.artifactId}</name>
@@ -30,7 +30,7 @@
 		<connection>scm:git:git://github.com/Zero-to-Heroes/hs-game-entities.git</connection>
 		<developerConnection>scm:git:https://github.com/Zero-to-Heroes/hs-game-entities.git</developerConnection>
 		<url>https://github.com/Zero-to-Heroes/hs-game-entities/tree/master</url>
-		<tag>hs-game-entities-1.0.0</tag>
+		<tag>hs-game-entities-1.0.2</tag>
 	</scm>
 
 	<distributionManagement>
