@@ -25,7 +25,7 @@ public class GameHelper {
 	public void setGame(Game game) {
 		this.game = game;
 		buildFullEntityList();
-		log.info("Flattened " + flatData.size() + " data entities");
+		log.debug("Flattened " + flatData.size() + " data entities");
 	}
 
 	private void buildFullEntityList() {
@@ -57,8 +57,13 @@ public class GameHelper {
 	}
 
 	@SuppressWarnings("unchecked")
-	private <T extends GameData> List<T> filterGameData(Class... specificClasses) {
+	public <T extends GameData> List<T> filterGameData(Class... specificClasses) {
 		return (List<T>) flatData.stream().filter(e -> Arrays.asList(specificClasses).contains(e.getClass()))
+				.collect(Collectors.toList());
+	}
+
+	public List<PlayerEntity> getPlayers() {
+		return flatData.stream().filter(d -> (d instanceof PlayerEntity)).map(p -> (PlayerEntity) p)
 				.collect(Collectors.toList());
 	}
 
