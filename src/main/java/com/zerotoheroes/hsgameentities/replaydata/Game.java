@@ -51,6 +51,7 @@ public class Game {
 	//@formatter:off
 	@XmlElements({
 			@XmlElement(name = "Block", type = Action.class),
+			@XmlElement(name = "Action", type = Action.class),
 			@XmlElement(name = "Choices", type = Choices.class),
 			@XmlElement(name = "FullEntity", type = FullEntity.class),
 			@XmlElement(name = "GameEntity", type = GameEntity.class),
