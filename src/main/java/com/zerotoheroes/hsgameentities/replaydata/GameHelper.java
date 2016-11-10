@@ -31,7 +31,7 @@ public class GameHelper {
 	public void setGame(Game game) {
 		this.game = game;
 		buildFullEntityList();
-		log.debug("Flattened " + flatData.size() + " data entities");
+		// log.debug("Flattened " + flatData.size() + " data entities");
 	}
 
 	private void buildFullEntityList() {
