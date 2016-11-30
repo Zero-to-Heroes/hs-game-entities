@@ -19,6 +19,8 @@ public enum MetaDataType {
     CLIENT_HISTORY(4),
 	SHOW_BIG_CARD(5),
 	EFFECT_TIMING(6),
+	HISTORY_TARGET(7),
+	OVERRIDE_HISTORY(8),
 
     // Renamed in 9786 from PowerHistoryMetaData.Type
     META_TARGET(TARGET.getIntValue()),
