@@ -15,6 +15,7 @@ import com.zerotoheroes.hsgameentities.replaydata.entities.FullEntity;
 import com.zerotoheroes.hsgameentities.replaydata.entities.GameEntity;
 import com.zerotoheroes.hsgameentities.replaydata.entities.PlayerEntity;
 import com.zerotoheroes.hsgameentities.replaydata.gameactions.Action;
+import com.zerotoheroes.hsgameentities.replaydata.gameactions.ChangeEntity;
 import com.zerotoheroes.hsgameentities.replaydata.gameactions.ChosenEntities;
 import com.zerotoheroes.hsgameentities.replaydata.gameactions.HideEntity;
 import com.zerotoheroes.hsgameentities.replaydata.gameactions.ShowEntity;
@@ -56,6 +57,7 @@ public class Game {
 			@XmlElement(name = "FullEntity", type = FullEntity.class),
 			@XmlElement(name = "GameEntity", type = GameEntity.class),
 			@XmlElement(name = "ShowEntity", type = ShowEntity.class),
+			@XmlElement(name = "ChangeEntity", type = ChangeEntity.class),
 			@XmlElement(name = "HideEntity", type = HideEntity.class),
 			@XmlElement(name = "Options", type = Options.class),
 			@XmlElement(name = "Player", type = PlayerEntity.class),

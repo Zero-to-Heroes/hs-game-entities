@@ -57,6 +57,7 @@ public class Action extends GameAction {
 			@XmlElement(name = "FullEntity", type = FullEntity.class),
 			@XmlElement(name = "GameEntity", type = GameEntity.class),
 			@XmlElement(name = "ShowEntity", type = ShowEntity.class),
+			@XmlElement(name = "ChangeEntity", type = ChangeEntity.class),
 			@XmlElement(name = "HideEntity", type = HideEntity.class),
 			@XmlElement(name = "Options", type = Options.class),
 			@XmlElement(name = "Player", type = PlayerEntity.class),
