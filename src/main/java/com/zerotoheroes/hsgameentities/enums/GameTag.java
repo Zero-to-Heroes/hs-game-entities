@@ -278,6 +278,7 @@ public enum GameTag {
 	KABAL(484),
 	ADDITIONAL_PLAY_REQS_1(515),
 	ADDITIONAL_PLAY_REQS_2(516),
+	BOSS(556),
 
 	// Only in card definitions
 //	Collectible(321),
