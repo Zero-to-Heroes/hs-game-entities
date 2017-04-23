@@ -37,6 +37,9 @@ public class Option extends GameData {
 	@XmlAttribute(name = "entity")
 	private int entity;
 
+	@XmlAttribute(name = "error")
+	private int error;
+
 	//@formatter:off
 	@XmlElements({
 			@XmlElement(name = "SubOption", type = SubOption.class),
@@ -45,12 +48,12 @@ public class Option extends GameData {
 	//@formatter:on
 	private List<OptionItem> optionsItems = new ArrayList<>();
 
-	public Option(int index, int type, int entity, List<OptionItem> optionsItems) {
+	public Option(int index, int type, int entity, int error, List<OptionItem> optionsItems) {
 		super();
 		this.index = index;
 		this.type = type;
 		this.entity = entity;
+		this.error = error;
 		this.optionsItems = optionsItems;
 	}
-
 }
