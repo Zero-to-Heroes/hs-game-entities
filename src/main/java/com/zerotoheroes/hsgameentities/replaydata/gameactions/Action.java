@@ -50,6 +50,12 @@ public class Action extends GameAction {
 	@XmlAttribute(name = "type")
 	private int type;
 
+	@XmlAttribute(name = "subOption")
+	private int subOption = -1;
+
+	@XmlAttribute(name = "triggerKeyword")
+	private int triggerKeyword = -1;
+
 	//@formatter:off
 	@XmlElements({
 			@XmlElement(name = "Block", type = Action.class),
@@ -71,7 +77,9 @@ public class Action extends GameAction {
 	private List<GameData> data = new ArrayList<>();
 
 	@Builder
-	public Action(int index, int target, int type, List<GameData> data, int entity, int effectIndex, String timestamp) {
+	public Action(int index, int target, int type, List<GameData> data, int entity, int effectIndex,
+			String timestamp, int subOption, int triggerKeyword) {
+
 		super();
 		this.index = index;
 		this.target = target;
@@ -79,6 +87,8 @@ public class Action extends GameAction {
 		this.data = data;
 		this.entity = entity;
 		this.timestamp = timestamp;
+		this.subOption = subOption;
+		this.triggerKeyword = triggerKeyword;
 	}
 
 }
