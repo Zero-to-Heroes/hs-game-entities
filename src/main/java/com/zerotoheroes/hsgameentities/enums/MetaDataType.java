@@ -2,9 +2,11 @@ package com.zerotoheroes.hsgameentities.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 @Getter
 @AllArgsConstructor
+@Slf4j
 // https://github.com/HearthSim/HearthDb
 // https://github.com/HearthSim/python-hearthstone/blob/82ead4d29a53be345897e7f6b405eaf261acc4e2/hearthstone/enums.py
 public enum MetaDataType {
@@ -21,6 +23,7 @@ public enum MetaDataType {
 	EFFECT_TIMING(6),
 	HISTORY_TARGET(7),
 	OVERRIDE_HISTORY(8),
+	HISTORY_TARGET_DONT_DUPLICATE_UNTIL_END(9),
 
     // Renamed in 9786 from PowerHistoryMetaData.Type
     META_TARGET(TARGET.getIntValue()),
@@ -38,7 +41,14 @@ public enum MetaDataType {
 		catch (Exception e) {
 		}
 
-		return MetaDataType.valueOf(tag).getIntValue();
+		int returnValue = -1;
+		try {
+			returnValue = MetaDataType.valueOf(tag).getIntValue();
+		}
+		catch (Exception e) {
+			log.error("Unkown MetaDataType: " + tag, e);
+		}
+		return returnValue;
 	}
 
 }
