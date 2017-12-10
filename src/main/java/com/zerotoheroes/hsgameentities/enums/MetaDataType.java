@@ -27,6 +27,7 @@ public enum MetaDataType {
 	BEGIN_ARTIFICIAL_HISTORY_TILE(10),
 	BEGIN_ARTIFICIAL_HISTORY_TRIGGER_TILE(11),
 	END_ARTIFICIAL_HISTORY_TILE(12),
+	START_DRAW(13),
 
     // Renamed in 9786 from PowerHistoryMetaData.Type
     META_TARGET(TARGET.getIntValue()),

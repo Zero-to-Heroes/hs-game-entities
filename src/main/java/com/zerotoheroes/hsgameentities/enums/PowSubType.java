@@ -15,9 +15,8 @@ public enum PowSubType {
     DEATHS(6),
     PLAY(7),
     FATIGUE(8),
-    
-
     RITUAL(9),
+    REVEAL_CARD(10),
 
     // Removed
     SCRIPT(4),
