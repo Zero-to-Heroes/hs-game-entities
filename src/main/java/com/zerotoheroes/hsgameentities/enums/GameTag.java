@@ -333,6 +333,7 @@ public enum GameTag {
      HEALTH_DISPLAY(917),
      ENABLE_HEALTH_DISPLAY(920),
      SHIFTING_SPELL(936),
+     USE_ALTERNATE_CARD_TEXT(955),
 
 	// Only in card definitions
 //	Collectible(321),
