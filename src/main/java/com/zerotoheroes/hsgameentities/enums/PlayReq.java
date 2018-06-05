@@ -1,9 +1,9 @@
 package com.zerotoheroes.hsgameentities.enums;
 
-import java.util.Arrays;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+
+import java.util.Arrays;
 
 @Getter
 @AllArgsConstructor
@@ -87,6 +87,7 @@ public enum PlayReq {
     REQ_CANNOT_PLAY_THIS(73),
 	REQ_FRIENDLY_MINIONS_OF_RACE_DIED_THIS_GAME(74),
 	REQ_DRAG_TO_PLAY(75),
+	REQ_OPPONENT_PLAYED_CARDS_THIS_GAME(77),
 
 	// Renamed),
 	REQ_ENCHANTED_TARGET(REQ_MAX_SECRETS.getIntValue()),
