@@ -1,13 +1,5 @@
 package com.zerotoheroes.hsgameentities.replaydata;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
-import org.apache.commons.lang.StringUtils;
-
 import com.zerotoheroes.hsgameentities.enums.CardType;
 import com.zerotoheroes.hsgameentities.enums.GameTag;
 import com.zerotoheroes.hsgameentities.replaydata.entities.BaseEntity;
@@ -16,9 +8,14 @@ import com.zerotoheroes.hsgameentities.replaydata.entities.PlayerEntity;
 import com.zerotoheroes.hsgameentities.replaydata.gameactions.Action;
 import com.zerotoheroes.hsgameentities.replaydata.gameactions.ShowEntity;
 import com.zerotoheroes.hsgameentities.replaydata.gameactions.Tag;
-
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @Slf4j
@@ -35,7 +32,6 @@ public class GameHelper {
 	}
 
 	private void buildFullEntityList() {
-		// flatData.addAll(game.getData());
 		// Keep the chronological ordering
 		for (GameData data : game.getData()) {
 			flatData.add(data);
@@ -45,7 +41,6 @@ public class GameHelper {
 
 	private void extractData(GameData data) {
 		if (data instanceof Action) {
-			// flatData.addAll(((Action) data).getData());
 			for (GameData gameData : ((Action) data).getData()) {
 				flatData.add(gameData);
 				extractData(gameData);
@@ -54,19 +49,16 @@ public class GameHelper {
 	}
 
 	public BaseEntity getEntity(int id) {
-		// The Full Entities
-		List<? extends BaseEntity> entities = filterGameData(FullEntity.class, PlayerEntity.class);
-		BaseEntity entity = null;
-		Optional<? extends BaseEntity> optional = entities.stream().filter(e -> e.getId() == id).findFirst();
-		if (optional.isPresent()) {
-			entity = optional.get();
-		}
-
-		return entity;
+		return filterGameData(FullEntity.class, PlayerEntity.class).stream()
+				.map(data -> (BaseEntity) data)
+				.filter(e -> e.getId() == id)
+				.findFirst()
+				.orElse(null);
 	}
 
 	public <T extends GameData> List<T> filterGameData(Class... specificClasses) {
-		return (List<T>) flatData.stream().filter(e -> Arrays.asList(specificClasses).contains(e.getClass()))
+		return (List<T>) flatData.stream()
+				.filter(e -> Arrays.asList(specificClasses).contains(e.getClass()))
 				.collect(Collectors.toList());
 	}
 
@@ -89,7 +81,9 @@ public class GameHelper {
 				// Now check the CONTROLLER tag
 				int controllerId = getTag(fullEntity.getTags(), GameTag.CONTROLLER);
 				for (PlayerEntity player : getPlayers()) {
-					if (getTag(player.getTags(), GameTag.CONTROLLER) == controllerId) { return player; }
+					if (getTag(player.getTags(), GameTag.CONTROLLER) == controllerId) {
+						return player;
+					}
 				}
 			}
 		}
@@ -97,8 +91,11 @@ public class GameHelper {
 	}
 
 	private int getTag(List<Tag> tags, GameTag tag) {
-		Tag ret = tags.stream().filter(t -> t.getName() == tag.getIntValue()).findFirst().orElse(null);
-		return ret == null ? -1 : ret.getValue();
+		return tags.stream()
+				.filter(t -> t.getName() == tag.getIntValue())
+				.findFirst()
+				.map(Tag::getValue)
+				.orElse(-1);
 	}
 
 }
