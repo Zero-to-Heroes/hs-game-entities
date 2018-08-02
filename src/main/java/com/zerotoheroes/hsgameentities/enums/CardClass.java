@@ -7,7 +7,6 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum CardClass {
 
-	//@formatter:off
 	INVALID(0),
     DEATHKNIGHT(1),
     DRUID(2),
@@ -20,11 +19,8 @@ public enum CardClass {
     WARLOCK(9),
     WARRIOR(10),
     DREAM(11),
-//    COUNT(12),
-
-    // alias
-    NEUTRAL(12);
-	//@formatter:on
+    NEUTRAL(12),
+    WHIZBANG(13);
 
 	private int intValue;
 
