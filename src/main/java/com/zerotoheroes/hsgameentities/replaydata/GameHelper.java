@@ -71,6 +71,31 @@ public class GameHelper {
 		// Since patch 5.2.0.13619, the first showEntity with a cardID (and that
 		// is not an enchantment, cf tavern brawl conditions) always comes from
 		// the current player
+		PlayerEntity player = extractMainPlayer();
+		if (player == null) {
+			player = extractPuzzlePlayer();
+		}
+		return player;
+	}
+
+	private PlayerEntity extractPuzzlePlayer() {
+		List<PlayerEntity> players = getPlayers();
+		for (PlayerEntity player : players) {
+			int entityId = getTag(player.getTags(), GameTag.HERO_ENTITY);
+			FullEntity entity = (FullEntity) getEntity(entityId);
+			if (entity == null) {
+				continue;
+			}
+			int functionallyDeadTag = getTag(player.getTags(), GameTag.APPEAR_FUNCTIONALLY_DEAD);
+			if (functionallyDeadTag != -1) {
+				continue;
+			}
+			return player;
+		}
+		return null;
+	}
+
+	private PlayerEntity extractMainPlayer() {
 		List<ShowEntity> showEntities = filterGameData(ShowEntity.class);
 		for (ShowEntity entity : showEntities) {
 			if (StringUtils.isNotEmpty(entity.getCardId())
