@@ -1,9 +1,9 @@
 package com.zerotoheroes.hsgameentities.enums;
 
-import java.util.Arrays;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+
+import java.util.Arrays;
 
 @Getter
 @AllArgsConstructor
@@ -382,6 +382,9 @@ public enum GameTag {
 	ALL_HEALING_DOUBLE(1058),
 	BLOCK_ALL_INPUT(1071),
 	PUZZLE_MODE(1073),
+	CARD_DOES_NOTHING(1075),
+	CASTSWHENDRAWN(1077),
+	FLOOPY(1097),
 
 	// Only in card definitions
 //	Collectible(321),
