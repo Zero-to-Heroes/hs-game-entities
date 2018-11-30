@@ -31,6 +31,7 @@ public enum MetaDataType {
 	BURNED_CARD(14),
 	EFFECT_SELECTION(15),
 	BEGIN_LISTENING_FOR_TURN_EVENTS(16),
+	HOLD_DRAWN_CARD(17),
 
     // Renamed in 9786 from PowerHistoryMetaData.Type
     META_TARGET(TARGET.getIntValue()),
