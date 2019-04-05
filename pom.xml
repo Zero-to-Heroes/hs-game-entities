@@ -30,7 +30,7 @@
 		<connection>scm:git:git://github.com/Zero-to-Heroes/hs-game-entities.git</connection>
 		<developerConnection>scm:git:https://github.com/Zero-to-Heroes/hs-game-entities.git</developerConnection>
 		<url>https://github.com/Zero-to-Heroes/hs-game-entities/tree/master</url>
-		<tag>hs-game-entities-1.0.24</tag>
+		<tag>hs-game-entities-1.0.28</tag>
 	</scm>
 
 	<distributionManagement>
