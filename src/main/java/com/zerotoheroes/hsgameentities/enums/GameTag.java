@@ -449,6 +449,7 @@ public enum GameTag {
 	ALTERNATE_CHAPTER_VO(1334),
 	EXTRA_SPELL_CASTS_ADDITIONAL(1348),
 	SQUELCH_LIFETIME_EFFECTS(1350),
+	TAG_TB_RANDOM_DECK_TIME_ID(1358),
 
 	// Only in card definitions
 //	Collectible(321),
