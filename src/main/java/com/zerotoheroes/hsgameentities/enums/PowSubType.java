@@ -17,6 +17,8 @@ public enum PowSubType {
     FATIGUE(8),
     RITUAL(9),
     REVEAL_CARD(10),
+    SUB_SPELL_START(11),
+    SUB_SPELL_END(12),
 
     // Removed
     SCRIPT(4),
