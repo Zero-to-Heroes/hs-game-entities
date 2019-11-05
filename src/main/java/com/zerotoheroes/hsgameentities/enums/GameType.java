@@ -22,7 +22,7 @@ public enum GameType {
     GT_FSG_BRAWL(20),
     GT_FSG_BRAWL_1P_VS_AI(21),
     GT_FSG_BRAWL_2P_COOP(22),
-    GT_TOURNAMENT(23);
+    GT_BATTLEGROUNDS(23);
 
 	private int intValue;
 

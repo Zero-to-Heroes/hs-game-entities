@@ -19,6 +19,9 @@ public enum CardType {
      ITEM(8),
      TOKEN(9),
      HERO_POWER(10),
+    BLANK(11),
+    GAME_MODE_BUTTON(12),
+    MOVE_MINION_HOVER_TARGET(22),
 
      // Renamed
      ABILITY(SPELL.getIntValue());
