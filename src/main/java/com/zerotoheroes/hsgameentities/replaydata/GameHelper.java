@@ -98,7 +98,7 @@ public class GameHelper {
 	private PlayerEntity extractMainPlayer() {
 		List<PlayerEntity> vsAiTrick = filterGameData(PlayerEntity.class).stream()
 				.map(player -> (PlayerEntity)player)
-				.filter(playerEntity -> Integer.parseInt(playerEntity.getAccountHi()) != 0)
+				.filter(playerEntity -> !playerEntity.getAccountHi().equals("0"))
 				.collect(Collectors.toList());
 		if (vsAiTrick.size() == 1) {
 			return vsAiTrick.get(0);
